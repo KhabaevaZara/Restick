@@ -1,60 +1,95 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{.Restaurant}} — Меню</title>
-  <link rel="stylesheet" href="/static/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.Restaurant}} — меню ресторана</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<header class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow">Ресторан</p>
-    <h1>{{.Restaurant}}</h1>
-    <p class="tagline">{{.Tagline}}</p>
-    <nav class="hero-nav">
-      {{range .Menu}}<a href="#{{.Slug}}">{{.Title}}</a>{{end}}
-    </nav>
+  <!-- ===== Заставка ===== -->
+  <div class="splash" id="splash">
+    <div class="splash-bg"></div>
+    <div class="splash-content">
+      <div class="splash-eyebrow">Ресторан европейской кухни</div>
+      <div class="splash-title">{{.Restaurant}}</div>
+      <div class="splash-line"></div>
+      <div class="splash-sub">Сезонное меню · Москва</div>
+    </div>
   </div>
-</header>
+  <noscript><style>.splash{display:none!important}</style></noscript>
 
-<main>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo">{{.Restaurant}}</div>
+      <nav class="nav-links">
+        {{range .Menu}}<a href="#{{.Slug}}">{{.Title}}</a>{{end}}
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Ресторан европейской кухни</div>
+    <h1>{{.Restaurant}}</h1>
+    <div class="divider"><i></i><b></b><i></i></div>
+    <p>{{.Tagline}}</p>
+  </section>
+
   {{range .Menu}}
-  <section id="{{.Slug}}" class="menu-section">
-    <h2>{{.Title}}</h2>
+  <section class="section" id="{{.Slug}}">
+    <div class="section-head">
+      <h2>{{.Title}}</h2>
+      <span class="rule"></span>
+      <span class="count">{{.Number}}</span>
+    </div>
+
     <div class="grid">
       {{range .Items}}
-      <article class="card">
-        <div class="photo">
-          {{if .Image}}
-            <img src="{{.Image}}" alt="{{.Name}}" loading="lazy">
-          {{else}}
-            <div class="photo-placeholder">
-              <span class="icon">📷</span>
-              <span>Фото блюда</span>
-            </div>
-          {{end}}
+      <article class="dish">
+        <div class="photo{{if not .Image}} photo--empty{{end}}">
+          {{if .Badge}}<span class="badge">{{.Badge}}</span>{{end}}
+          {{if .Image}}<img src="{{.Image}}" alt="{{.Name}}">{{end}}
         </div>
-        <div class="card-body">
-          <div class="card-head">
+        <div class="dish-body">
+          <div class="dish-head">
             <h3>{{.Name}}</h3>
-            {{if .Tag}}<span class="tag tag-{{.Tag}}">{{.Tag}}</span>{{end}}
+            <span class="dots"></span>
+            <span class="price">{{.Price}} ₽</span>
           </div>
           <p class="desc">{{.Description}}</p>
-          <div class="price">{{.Price}} ₽</div>
         </div>
       </article>
       {{end}}
     </div>
   </section>
   {{end}}
-</main>
 
-<footer>
-  <p>{{.Restaurant}} · ул. Примерная, 1 · +7 (999) 123-45-67</p>
-  <p class="small">Часы работы: 12:00 — 23:00</p>
-</footer>
+  <p class="note">Все цены указаны в рублях. Состав и вес блюд уточняйте у официанта.</p>
 
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h4>Адрес</h4>
+        <p>ул. Маркова, 12<br>Москва</p>
+      </div>
+      <div>
+        <h4>Часы работы</h4>
+        <p>Пн–Чт 10:00 — 23:00<br>Пт–Вс 12:00 — 02:00</p>
+      </div>
+      <div>
+        <h4>Бронирование</h4>
+        <p><a href="tel:+79000000000">+7 (900) 000-00-00</a><br>
+           <a href="mailto:hello@ottepel.ru">hello@ottepel.ru</a></p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Ресторан «{{.Restaurant}}»</div>
+  </footer>
+
+  <script src="/static/app.js"></script>
 </body>
 </html>
