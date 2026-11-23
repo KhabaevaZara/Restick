@@ -7,13 +7,17 @@
 }
 
 :root {
-  --bg: #100e0c;
-  --bg-soft: #171412;
-  --card: #1b1714;
-  --line: #2e2823;
-  --gold: #d8b26a;
-  --text: #f4efe7;
-  --muted: #a1968a;
+  --bg: #1c0310;
+  --bg-soft: #280a19;
+  --card: #2e0a1d;
+  --line: #4d1530;
+
+  --accent: #d49a9a;        /* бывший «золотой» — теперь пыльная роза */
+  --accent-deep: #aa5e7a;   /* средний малиново-розовый */
+  --accent-strong: #7c0e44; /* глубокий винный */
+
+  --text: #faf0f4;
+  --muted: #c490a5;
   --radius: 18px;
 }
 
@@ -34,7 +38,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(16, 14, 12, 0.85);
+  background-color: rgba(28, 3, 16, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
@@ -59,7 +63,7 @@ body {
 }
 
 .logo span {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .nav-links {
@@ -86,7 +90,7 @@ body {
 
 .nav-links a:hover {
   background-color: var(--bg-soft);
-  color: var(--text);
+  color: var(--accent);
 }
 
 .hero {
@@ -100,7 +104,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(620px 320px at 50% -10%, rgba(216, 178, 106, 0.16), transparent 70%);
+  background: radial-gradient(620px 320px at 50% -10%, rgba(124, 14, 68, 0.55), rgba(170, 94, 122, 0.12) 45%, transparent 72%);
   pointer-events: none;
 }
 
@@ -110,7 +114,7 @@ body {
 
 .eyebrow {
   margin-bottom: 18px;
-  color: var(--gold);
+  color: var(--accent);
   font-size: 12px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
@@ -136,7 +140,7 @@ body {
   display: block;
   width: 52px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold));
+  background: linear-gradient(90deg, transparent, var(--accent));
 }
 
 .divider i:last-child {
@@ -147,7 +151,7 @@ body {
   display: block;
   width: 6px;
   height: 6px;
-  background-color: var(--gold);
+  background-color: var(--accent);
   transform: rotate(45deg);
 }
 
@@ -186,7 +190,7 @@ body {
 }
 
 .section-head .count {
-  color: #5f564d;
+  color: #8b4b6c;
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -209,8 +213,8 @@ body {
 }
 
 .dish:hover {
-  border-color: #3d342b;
-  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.9);
+  border-color: var(--accent-deep);
+  box-shadow: 0 18px 40px -22px rgba(124, 14, 68, 0.7);
   transform: translateY(-4px);
 }
 
@@ -218,7 +222,7 @@ body {
   position: relative;
   aspect-ratio: 4 / 3;
   border-bottom: 1px solid var(--line);
-  background: #221d19;
+  background: #260a1a;
 }
 
 .photo img {
@@ -231,8 +235,8 @@ body {
 /* Плейсхолдер: только когда фото нет */
 .photo--empty {
   background:
-    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.022) 0 10px, transparent 10px 20px),
-    #221d19;
+    repeating-linear-gradient(45deg, rgba(212, 154, 154, 0.035) 0 10px, transparent 10px 20px),
+    #260a1a;
 }
 
 .photo--empty::after {
@@ -241,9 +245,9 @@ body {
   inset: 14px;
   display: grid;
   place-items: center;
-  border: 1px dashed #3b332b;
+  border: 1px dashed #5c1c3c;
   border-radius: 12px;
-  color: #5d534a;
+  color: #8b4b6c;
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -255,12 +259,12 @@ body {
   left: 14px;
   z-index: 2;
   padding: 5px 11px;
-  background-color: rgba(216, 178, 106, 0.14);
-  border: 1px solid rgba(216, 178, 106, 0.38);
+  background-color: rgba(124, 14, 68, 0.55);
+  border: 1px solid rgba(212, 154, 154, 0.55);
   border-radius: 999px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  color: var(--gold);
+  color: var(--accent);
   font-size: 10.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -290,12 +294,12 @@ body {
 .dots {
   flex: 1;
   min-width: 14px;
-  border-bottom: 1px dotted #3d342b;
+  border-bottom: 1px dotted #5c1c3c;
   transform: translateY(-4px);
 }
 
 .price {
-  color: var(--gold);
+  color: var(--accent);
   font-size: 15px;
   font-weight: 700;
   white-space: nowrap;
@@ -311,7 +315,7 @@ body {
   max-width: 1180px;
   margin: 8px auto 0;
   padding: 0 20px;
-  color: #5f564d;
+  color: #8b4b6c;
   font-size: 12.5px;
   text-align: center;
 }
@@ -333,7 +337,7 @@ body {
 
 .footer h4 {
   margin-bottom: 10px;
-  color: var(--gold);
+  color: var(--accent);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.24em;
@@ -352,7 +356,7 @@ body {
 }
 
 .footer a:hover {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .copyright {
@@ -360,7 +364,7 @@ body {
   margin: 40px auto 0;
   padding-top: 26px;
   border-top: 1px solid var(--line);
-  color: #4d453d;
+  color: #7a3a5c;
   font-size: 12.5px;
   text-align: center;
 }
@@ -373,7 +377,7 @@ body {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background-color: #0d0b0a;
+  background-color: #16020c;
   transition: opacity 1s ease, visibility 1s ease;
 }
 
@@ -387,9 +391,9 @@ body {
   position: absolute;
   inset: -12%;
   background:
-    radial-gradient(58% 55% at 50% 42%, rgba(216, 178, 106, 0.20), transparent 72%),
-    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.022) 0 12px, transparent 12px 24px),
-    #0d0b0a;
+    radial-gradient(58% 55% at 50% 42%, rgba(124, 14, 68, 0.55), rgba(170, 94, 122, 0.14) 45%, transparent 72%),
+    repeating-linear-gradient(45deg, rgba(212, 154, 154, 0.035) 0 12px, transparent 12px 24px),
+    #16020c;
   animation: splashZoom 7s ease-out forwards;
 }
 
@@ -397,7 +401,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(120% 100% at 50% 50%, transparent 38%, rgba(0, 0, 0, 0.88) 100%);
+  background: radial-gradient(120% 100% at 50% 50%, transparent 38%, rgba(10, 1, 6, 0.9) 100%);
 }
 
 @keyframes splashZoom {
@@ -413,7 +417,7 @@ body {
 
 .splash-eyebrow {
   margin-bottom: 20px;
-  color: var(--gold);
+  color: var(--accent);
   font-size: 12px;
   letter-spacing: 0.34em;
   text-transform: uppercase;
@@ -450,7 +454,7 @@ body {
   width: min(240px, 58vw);
   height: 1px;
   margin: 30px auto 0;
-  background: rgba(216, 178, 106, 0.2);
+  background: rgba(212, 154, 154, 0.22);
   overflow: hidden;
   opacity: 0;
   animation: splashUp 0.9s 0.65s ease forwards;
@@ -463,7 +467,7 @@ body {
   bottom: 0;
   left: 0;
   width: 0;
-  background: linear-gradient(90deg, rgba(216, 178, 106, 0), var(--gold));
+  background: linear-gradient(90deg, rgba(212, 154, 154, 0), var(--accent));
   animation: splashBar 2.4s 0.7s cubic-bezier(0.35, 0, 0.2, 1) forwards;
 }
 
