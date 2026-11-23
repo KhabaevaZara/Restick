@@ -420,8 +420,6 @@ body {
   color: var(--accent);
   font-size: 12px;
   letter-spacing: 0.34em;
-  text-transform: uppercase;
-  opacity: 0;
 }
 
 
