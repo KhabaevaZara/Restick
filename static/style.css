@@ -456,8 +456,6 @@ body {
   margin: 30px auto 0;
   background: rgba(212, 154, 154, 0.22);
   overflow: hidden;
-  opacity: 0;
-  animation: splashUp 0.9s 0.65s ease forwards;
 }
 
 
