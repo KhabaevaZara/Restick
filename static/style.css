@@ -512,5 +512,4 @@ html.is-loading body {
 }
 
 @media (max-width: 600px) {
-  .logo { font-size: 16px; letter-spacing: 0.12em; }
 }
