@@ -15,6 +15,7 @@ var content embed.FS
 func main() {
 	addr := flag.String("addr", ":8080", "адрес для прослушивания")
 	dbPath := flag.String("db", "menu.db", "путь к файлу SQLite")
+	imgDir := flag.String("img", "static/img", "каталог с фотографиями блюд")
 	flag.Parse()
 
 	db, err := OpenDB(*dbPath)
@@ -31,7 +32,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.FS(staticSub))))
-
+	mux.Handle("/img/", http.StripPrefix("/img/", http.FileServer(http.Dir(*imgDir))))
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/" {
 			http.NotFound(w, r)
