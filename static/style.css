@@ -425,9 +425,6 @@ body {
   animation: splashUp 0.9s 0.15s ease forwards;
 }
 
-.splash-title {
-  padding-left: 0.09em;
-}
 
 @keyframes splashTitle {
   from {
