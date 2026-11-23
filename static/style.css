@@ -431,8 +431,6 @@ body {
   font-family: "Playfair Display", serif;
   font-size: clamp(46px, 12vw, 112px);
   font-weight: 600;
-  line-height: 1.05;
-  opacity: 0;
 }
 
 @keyframes splashTitle {
