@@ -48,7 +48,7 @@ func main() {
 
 		data := map[string]any{
 			"Restaurant": "Оттепель",
-			"Tagline":    "Кухня на открытом огне",
+			"Tagline":    "Сезонное меню от шефа. Готовим из локальных продуктов каждый день.",
 			"Menu":       menu,
 		}
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
