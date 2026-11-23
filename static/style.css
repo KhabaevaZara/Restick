@@ -513,6 +513,5 @@ html.is-loading body {
 
 @media (max-width: 600px) {
   .hero { padding: 64px 20px 44px; }
-  .nav-inner { gap: 14px; height: 58px; }
   .logo { font-size: 16px; letter-spacing: 0.12em; }
 }
