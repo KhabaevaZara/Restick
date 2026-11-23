@@ -460,9 +460,6 @@ body {
   animation: splashUp 0.9s 0.65s ease forwards;
 }
 
-.splash-line::after {
-  content: "";
-}
 
 
 
