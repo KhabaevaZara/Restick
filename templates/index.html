@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Restaurant}} — Меню</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Ресторан</p>
+    <h1>{{.Restaurant}}</h1>
+    <p class="tagline">{{.Tagline}}</p>
+    <nav class="hero-nav">
+      {{range .Menu}}<a href="#{{.Slug}}">{{.Title}}</a>{{end}}
+    </nav>
+  </div>
+</header>
+
+<main>
+  {{range .Menu}}
+  <section id="{{.Slug}}" class="menu-section">
+    <h2>{{.Title}}</h2>
+    <div class="grid">
+      {{range .Items}}
+      <article class="card">
+        <div class="photo">
+          {{if .Image}}
+            <img src="{{.Image}}" alt="{{.Name}}" loading="lazy">
+          {{else}}
+            <div class="photo-placeholder">
+              <span class="icon">📷</span>
+              <span>Фото блюда</span>
+            </div>
+          {{end}}
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <h3>{{.Name}}</h3>
+            {{if .Tag}}<span class="tag tag-{{.Tag}}">{{.Tag}}</span>{{end}}
+          </div>
+          <p class="desc">{{.Description}}</p>
+          <div class="price">{{.Price}} ₽</div>
+        </div>
+      </article>
+      {{end}}
+    </div>
+  </section>
+  {{end}}
+</main>
+
+<footer>
+  <p>{{.Restaurant}} · ул. Примерная, 1 · +7 (999) 123-45-67</p>
+  <p class="small">Часы работы: 12:00 — 23:00</p>
+</footer>
+
+</body>
+</html>
