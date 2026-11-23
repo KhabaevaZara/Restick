@@ -409,9 +409,6 @@ body {
   to   { transform: scale(1); }
 }
 
-.splash-content {
-  position: relative;
-}
 
 
 @keyframes splashTitle {
