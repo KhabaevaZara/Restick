@@ -427,7 +427,6 @@ body {
 
 .splash-title {
   padding-left: 0.09em;
-  color: var(--text);
 }
 
 @keyframes splashTitle {
