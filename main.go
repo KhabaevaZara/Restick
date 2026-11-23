@@ -46,7 +46,7 @@ func main() {
 		}
 
 		data := map[string]any{
-			"Restaurant": "Уголёк",
+			"Restaurant": "Оттепель",
 			"Tagline":    "Кухня на открытом огне",
 			"Menu":       menu,
 		}
