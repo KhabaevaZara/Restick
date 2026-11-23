@@ -511,5 +511,3 @@ html.is-loading body {
   .splash-line::after { width: 100%; }
 }
 
-@media (max-width: 600px) {
-}
