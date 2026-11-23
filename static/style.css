@@ -471,10 +471,5 @@ body {
   animation: splashBar 2.4s 0.7s cubic-bezier(0.35, 0, 0.2, 1) forwards;
 }
 
-@keyframes splashBar {
-  to { width: 100%; }
-}
-
-
 
 
