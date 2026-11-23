@@ -429,8 +429,6 @@ body {
   padding-left: 0.09em;
   color: var(--text);
   font-family: "Playfair Display", serif;
-  font-size: clamp(46px, 12vw, 112px);
-  font-weight: 600;
 }
 
 @keyframes splashTitle {
