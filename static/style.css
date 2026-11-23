@@ -462,7 +462,6 @@ body {
 
 .splash-line::after {
   content: "";
-  position: absolute;
 }
 
 
