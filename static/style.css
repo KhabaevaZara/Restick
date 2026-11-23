@@ -454,8 +454,6 @@ body {
   width: min(240px, 58vw);
   height: 1px;
   margin: 30px auto 0;
-  background: rgba(212, 154, 154, 0.22);
-  overflow: hidden;
 }
 
 
