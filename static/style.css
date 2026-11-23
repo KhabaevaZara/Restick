@@ -496,18 +496,4 @@ html.is-loading body {
   height: 100%;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .splash-bg,
-  .splash-eyebrow,
-  .splash-title,
-  .splash-line,
-  .splash-line::after,
-  .splash-sub {
-    animation: none !important;
-    opacity: 1;
-    filter: none;
-    letter-spacing: 0.18em;
-  }
-  .splash-line::after { width: 100%; }
-}
 
