@@ -409,7 +409,32 @@ body {
   to   { transform: scale(1); }
 }
 
+.splash-content {
+  position: relative;
+  padding: 0 24px;
+  text-align: center;
+}
 
+.splash-eyebrow {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: splashUp 0.9s 0.15s ease forwards;
+}
+
+.splash-title {
+  padding-left: 0.09em;
+  color: var(--text);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(46px, 12vw, 112px);
+  font-weight: 600;
+  line-height: 1.05;
+  opacity: 0;
+  animation: splashTitle 1.7s 0.3s cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
+}
 
 @keyframes splashTitle {
   from {
@@ -424,7 +449,72 @@ body {
   }
 }
 
+.splash-line {
+  position: relative;
+  width: min(240px, 58vw);
+  height: 1px;
+  margin: 30px auto 0;
+  background: rgba(212, 154, 154, 0.22);
+  overflow: hidden;
+  opacity: 0;
+  animation: splashUp 0.9s 0.65s ease forwards;
+}
 
+.splash-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background: linear-gradient(90deg, rgba(212, 154, 154, 0), var(--accent));
+  animation: splashBar 2.4s 0.7s cubic-bezier(0.35, 0, 0.2, 1) forwards;
+}
 
+@keyframes splashBar {
+  to { width: 100%; }
+}
 
+.splash-sub {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: splashUp 0.9s 1s ease forwards;
+}
 
+@keyframes splashUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+html.is-loading,
+html.is-loading body {
+  overflow: hidden;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-bg,
+  .splash-eyebrow,
+  .splash-title,
+  .splash-line,
+  .splash-line::after,
+  .splash-sub {
+    animation: none !important;
+    opacity: 1;
+    filter: none;
+    letter-spacing: 0.18em;
+  }
+  .splash-line::after { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 64px 20px 44px; }
+  .nav-inner { gap: 14px; height: 58px; }
+  .logo { font-size: 16px; letter-spacing: 0.12em; }
+  .section { padding: 32px 16px; }
+  .grid { grid-template-columns: 1fr; gap: 16px; }
+}
