@@ -422,7 +422,6 @@ body {
   letter-spacing: 0.34em;
   text-transform: uppercase;
   opacity: 0;
-  animation: splashUp 0.9s 0.15s ease forwards;
 }
 
 
