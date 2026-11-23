@@ -9,7 +9,6 @@ import (
 	"net/http"
 )
 
-//go:embed templates/*.html static/*
 var content embed.FS
 
 func main() {
