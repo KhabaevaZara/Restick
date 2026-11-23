@@ -516,5 +516,4 @@ html.is-loading body {
   .nav-inner { gap: 14px; height: 58px; }
   .logo { font-size: 16px; letter-spacing: 0.12em; }
   .section { padding: 32px 16px; }
-  .grid { grid-template-columns: 1fr; gap: 16px; }
 }
