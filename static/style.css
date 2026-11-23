@@ -492,7 +492,6 @@ body {
 
 html.is-loading,
 html.is-loading body {
-  overflow: hidden;
 }
 
 
